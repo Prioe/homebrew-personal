@@ -12,7 +12,7 @@ class TmuxSessionizer < Formula
   end
 
   test do
-    assert_match("search paths", shell_output("#{bin}/tms config"))
+    assert_match("search paths", shell_output("#{bin}/tms config --help"))
     assert_match("tmux-sessionizer #{version}", shell_output("#{bin}/tms --version"))
   end
 end

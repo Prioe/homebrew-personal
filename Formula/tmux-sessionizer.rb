@@ -7,13 +7,13 @@ class TmuxSessionizer < Formula
 
   depends_on "rust" => :build
 
+  on_macos do
+    depends_on "libgit2"
+  end
+
   on_linux do
     depends_on "pkg-config" => :build
     depends_on "openssl@3"
-  end
-
-  on_macos do
-    depends_on "libgit2"
   end
 
   def install

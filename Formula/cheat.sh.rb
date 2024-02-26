@@ -15,6 +15,6 @@ class CheatSh < Formula
   end
 
   test do
-    assert_match("The only cheat sheet you need", shell_output("#{bin}/cht.sh --version"))
+    assert_match("To access a cheat sheet you can simply issue a plain HTTP or HTTPS request", shell_output("#{bin}/cht.sh :intro"))
   end
 end

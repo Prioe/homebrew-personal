@@ -6,10 +6,7 @@ class TmuxSessionizer < Formula
   license "MIT"
 
   depends_on "rust" => :build
-
-  on_macos do
-    depends_on "libgit2"
-  end
+  depends_on "libgit2"
 
   on_linux do
     depends_on "pkg-config" => :build

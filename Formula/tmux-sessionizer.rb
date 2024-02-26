@@ -5,6 +5,12 @@ class TmuxSessionizer < Formula
   sha256 "b65de2b9f4ad7cc78f8fb818bd31e2d2f54bee3b2078ca10c4d7f0a628d5dd0e"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/Prioe/homebrew-personal/releases/download/tmux-sessionizer-0.4.0"
+    sha256 cellar: :any,                 ventura:      "1edbb836922bffd2f58e9d068b2e7e76ff7315935e75da24cf6970ed6fb594d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0b2142fe5fbe33e33bd2fb21c032bd2ee18ea6ddb19471c40c91cfb85a1d138a"
+  end
+
   depends_on "rust" => :build
   depends_on "libgit2"
 

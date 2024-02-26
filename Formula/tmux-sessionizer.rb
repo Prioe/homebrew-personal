@@ -6,11 +6,21 @@ class TmuxSessionizer < Formula
   license "MIT"
 
   depends_on "rust" => :build
-  depends_on "openssl@3"
 
-  uses_from_macos "zlib"
+  on_linux do
+    depends_on "pkg-config" => :build
+    depends_on "openssl@3"
+  end
+
+  on_macos do
+    depends_on "libgit2"
+  end
 
   def install
+    # Ensure that the `openssl` crate picks up the intended library.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     system "cargo", "install", *std_cargo_args
   end
 
